@@ -1,10 +1,11 @@
 <div coursecard>
 
 
-<div class="course-titlle">{{course.description}}</div>
-<img width="300" alt="Angular Logo" [src]="course.iconUrl">
+<div class="course-titlle">{{courseInput.description}}</div>
+<img width="300" alt="Angular Logo" [src]="courseInput.iconUrl">
 <div class="course-long-description">
-{{course.longDescription}}
+{{courseInput.longDescription}}
 </div>
 <button mat-raised-button class="btn-selectCourse" (click)="onCourseViewed()">View Course</button>
+
 </div>

@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { COURSES } from 'src/db-data';
-import {Course} from './model/course';
+import { CoursesModel } from 'src/db-data';
+import {CourseViewModel} from './model/course';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  coreCourse = COURSES[0];
-rxjsCourse = COURSES[1];
-ngrxCourse = COURSES[2];
+  coursePropertyModel = CoursesModel;
+//   coreCourse = COURSES[0];
+// rxjsCourse = COURSES[1];
+// ngrxCourse = COURSES[2];
   data = {
     title : 'angular core deep dive'
   };
@@ -21,7 +21,7 @@ ngrxCourse = COURSES[2];
   // onKeyUp(newTittle:string){
   //   this.data.title=newTittle;
   // }
-  onCourseSelected(course: Course) {
-    console.log('card clicked', course);
+  onCourseSelected(courseViewModel: CourseViewModel) {
+    console.log('card clicked', courseViewModel);
   }
 }

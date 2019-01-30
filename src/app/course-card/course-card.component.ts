@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { COURSES } from 'src/db-data';
-import { Course } from '../model/course';
+import { CoursesModel } from 'src/db-data';
+import { CourseViewModel } from '../model/course';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -10,16 +10,15 @@ import { Course } from '../model/course';
 })
 export class CourseCardComponent implements OnInit {
   @Input()
-  course: Course;
+  courseInput: CourseViewModel;
   @Output()
-  courseSelected = new EventEmitter<Course>();
+  courseSelected = new EventEmitter<CourseViewModel>();
   constructor() { }
 
   ngOnInit() {
   }
   onCourseViewed() {
-    debugger
     console.log('couse clicked');
-    this.courseSelected.emit(this.course);
+    this.courseSelected.emit(this.courseInput);
   }
 }

@@ -1,4 +1,4 @@
-export interface Course {
+export interface CourseViewModel {
     id: number;
     description: string;
     iconUrl: string;
