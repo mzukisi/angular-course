@@ -11,6 +11,8 @@ import { CourseViewModel } from '../model/course';
 export class CourseCardComponent implements OnInit {
   @Input()
   courseInput: CourseViewModel;
+  @Input()
+  cardindex: number;
   @Output()
   courseSelected = new EventEmitter<CourseViewModel>();
   constructor() { }
@@ -20,5 +22,8 @@ export class CourseCardComponent implements OnInit {
   onCourseViewed() {
     console.log('couse clicked');
     this.courseSelected.emit(this.courseInput);
+  }
+  isImageVisible() {
+    return this.courseInput && this.courseInput.iconUrl;
   }
 }

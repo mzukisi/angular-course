@@ -6,9 +6,12 @@
 
 
 <div class="courses">
-  <course-card *ngFor="let courseModelProperty of coursePropertyModel "
+  <!--looping through courses-->
+  <course-card  *ngFor=
+  "let courseModelProperty of coursePropertyModel;index as indexCount "
    (courseSelected) ="onCourseSelected($event)"
     [courseInput]="courseModelProperty"
+    [cardindex]="indexCount + 1"
    >
   </course-card>
   

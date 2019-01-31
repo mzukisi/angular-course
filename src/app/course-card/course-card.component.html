@@ -1,8 +1,12 @@
-<div coursecard>
+<div *ngIf="courseInput">
 
 
-<div class="course-titlle">{{courseInput.description}}</div>
-<img width="300" alt="Angular Logo" [src]="courseInput.iconUrl">
+<div class="course-titlle">{{cardindex +" "+ courseInput.description}}</div>
+<!--if statement either to show image or display templete reference-->
+<img *ngIf="isImageVisible();else noImage" width="300" alt="Angular Logo" [src]="courseInput.iconUrl">
+<ng-template #noImage>
+    <p>no image available</p>
+</ng-template>
 <div class="course-long-description">
 {{courseInput.longDescription}}
 </div>
