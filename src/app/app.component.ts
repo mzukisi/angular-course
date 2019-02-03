@@ -11,6 +11,7 @@ export class AppComponent {
 //   coreCourse = COURSES[0];
 // rxjsCourse = COURSES[1];
 // ngrxCourse = COURSES[2];
+startDate = new Date(2000, 0, 1);
   data = {
     title : 'angular core deep dive'
   };

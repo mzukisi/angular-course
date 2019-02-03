@@ -3,6 +3,6 @@ export interface CourseViewModel {
     description: string;
     iconUrl: string;
     longDescription: string;
-    catergory: string;
+    category: string;
     lessonsCount: number;
 }

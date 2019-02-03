@@ -1,5 +1,6 @@
-<div *ngIf="courseInput">
-
+<div class="course-card" *ngIf="courseInput" [ngClass]="cardClasses()">
+<!--ngclass for evaluating object [ngClass]="{'beginner': false}"-->
+<!--ngclass to evaluate arrays [ngClass]="['beginner']"-->
 
 <div class="course-titlle">{{cardindex +" "+ courseInput.description}}</div>
 <!--if statement either to show image or display templete reference-->
@@ -7,8 +8,16 @@
 <ng-template #noImage>
     <p>no image available</p>
 </ng-template>
+
 <div class="course-long-description">
 {{courseInput.longDescription}}
+</div>
+<!--andding switch case and switch-->
+<div class="course-category" [ngSwitch]="courseInput.category">
+    <div class="category"*ngSwitchCase="'BEGINNER'">beginner</div>
+    <div class="category"*ngSwitchCase="'INTERMEDIATE'">intermediate</div>
+    <div class="category"*ngSwitchCase="'ADVANCED'">advanced</div>
+    <div class="category"*ngSwitchDefault>All levels</div>
 </div>
 <button mat-raised-button class="btn-selectCourse" (click)="onCourseViewed()">View Course</button>
 

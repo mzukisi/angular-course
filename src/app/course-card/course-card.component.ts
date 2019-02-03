@@ -26,4 +26,15 @@ export class CourseCardComponent implements OnInit {
   isImageVisible() {
     return this.courseInput && this.courseInput.iconUrl;
   }
+   cardClasses() {
+     if (this.courseInput.category === 'BEGINNER') {
+return 'beginner';
+     }
+  }
+  /* cardClasses() {  FUNCTION TO CALL biginner css class using ngclass
+   return {
+    'beginner': this.courseInput.category === 'BEGINNER',
+    'course-card': true
+   };
+} */
 }
