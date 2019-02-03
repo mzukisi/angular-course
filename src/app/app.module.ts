@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-
 import { AppComponent } from './app.component';
 import { CourseCardComponent } from './course-card/course-card.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +11,7 @@ import { CourseCardComponent } from './course-card/course-card.component';
   ],
   imports: [
     BrowserModule,
-    MatButtonModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
